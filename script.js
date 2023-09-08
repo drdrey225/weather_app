@@ -3,7 +3,7 @@ const fetchInfo = () => {
    let apiKey = `a761011a1d2c2da7166b4426485c4a56`
    let url = `https://api.openweathermap.org/data/2.5/weather?q=${input}&appid=${apiKey}&units=metric`
    userInput.value =""
-   
+
    fetch(url)
    .then(response=>response.json())
    .then((result)=>{
@@ -11,7 +11,7 @@ const fetchInfo = () => {
       cityName.innerHTML = `<img width="28" height="28" src="https://img.icons8.com/color/48/visit.png" alt="visit"/> ${result.name}`
       temp.innerHTML =`${result.main.temp}°C`
       windSpeed.innerHTML = `Wind Speed: ${result.wind.speed}km/h`
-      humidity.innerHTML = `Humidity: ${result.main.humidity}`
+      humidity.innerHTML = `Humidity: ${result.main.humidity}%`
       country.innerHTML = `Country: ${result.sys.country}`
 
       let imago = `http://openweathermap.org/img/w/${result.weather[0].icon}.png`
